@@ -1,4 +1,4 @@
-package comparator.entities;
+package entities;
 
 public class Product {
     private String name;
@@ -26,6 +26,10 @@ public class Product {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public static boolean staticProductPredicate(Product product) {
+        return product.getPrice() >= 1000;
     }
 
     @Override

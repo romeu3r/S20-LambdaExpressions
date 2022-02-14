@@ -1,6 +1,6 @@
-package comparator.util;
+package util;
 
-import comparator.entities.Product;
+import entities.Product;
 
 import java.util.function.Predicate;
 

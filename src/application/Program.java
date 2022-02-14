@@ -1,7 +1,7 @@
-package comparator.application;
+package application;
 
-import comparator.entities.Product;
-import comparator.util.ProductPredicate;
+import entities.Product;
+import util.ProductPredicate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +14,7 @@ public class Program {
         list.add(new Product("Notebook", 1200.00));
         list.add(new Product("Tablet", 450.00));
 
-//        list.removeIf(p -> p.getPrice() > 1000);
-        list.removeIf(new ProductPredicate());
+        list.removeIf(Product::staticProductPredicate);
 
         list.forEach(System.out::println);
     }
