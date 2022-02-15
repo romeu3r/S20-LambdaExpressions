@@ -19,7 +19,7 @@ public class Program {
         list.add(new Product("Tablet", 350.50));
         list.add(new Product("HD Case", 80.90));
 
-        List<String> item = list.stream().map(new UppercaseName()).collect(Collectors.toList());
+        List<String> item = list.stream().map(Product::staticUppercaseName).collect(Collectors.toList());
 
         item.forEach(System.out::println);
 
