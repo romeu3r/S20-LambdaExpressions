@@ -19,11 +19,7 @@ public class Program {
 
         double tax = 1.1;
 
-        Consumer<Product> cons = p -> {
-            p.setPrice(p.getPrice() * tax);
-        };
-
-        list.forEach(cons);
+        list.forEach(p -> p.setPrice(p.getPrice() * tax));
 
         list.forEach(System.out::println);
     }
