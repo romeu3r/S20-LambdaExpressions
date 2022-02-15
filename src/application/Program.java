@@ -1,10 +1,12 @@
 package application;
 
 import entities.Product;
+import util.UppercaseName;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 public class Program {
     public static void main(String[] args) {
@@ -17,10 +19,9 @@ public class Program {
         list.add(new Product("Tablet", 350.50));
         list.add(new Product("HD Case", 80.90));
 
-        double tax = 1.1;
+        List<String> item = list.stream().map(new UppercaseName()).collect(Collectors.toList());
 
-        list.forEach(p -> p.setPrice(p.getPrice() * tax));
+        item.forEach(System.out::println);
 
-        list.forEach(System.out::println);
     }
 }
